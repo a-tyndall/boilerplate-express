@@ -5,7 +5,7 @@
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.3",
     "express": "^4.17.1",
-    "fcc-express-bground": "https://github.com/Em-Ant/fcc-express-bground-pkg.git"
+    "fcc-express-bground": "git+https://github.com/Em-Ant/fcc-express-bground-pkg.git"
   },
   "main": "server.js",
   "scripts": {
@@ -13,5 +13,17 @@
   },
   "engines": {
     "node": "4.4.5"
-  }
+  },
+  "description": "",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/a-tyndall/boilerplate-express.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/a-tyndall/boilerplate-express/issues"
+  },
+  "homepage": "https://github.com/a-tyndall/boilerplate-express#readme"
 }
