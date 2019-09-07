@@ -5,7 +5,7 @@ var app = express();
 // --> 7)  Mount the Logger middleware here
 app.use(function(req, res, next) {
   console.log(`${req.method} ${req.path} - ${req.ip}`);
-  next()
+  next();
 });
 
 // --> 11)  Mount the body-parser middleware  here
@@ -21,7 +21,7 @@ console.log('Hello World');
 
 /** 3) Serve an HTML file */
 app.get('/', (req,res) => {
-  res.sendFile(__dirname + '/views/index.html')
+  res.sendFile(__dirname + '/views/index.html');
 });
 
 /** 4) Serve static assets  */
@@ -35,7 +35,7 @@ app.get('/json', (req, res) => {
   if (process.env.MESSAGE_STYLE === 'uppercase')
     myResponse.message = myResponse.message.toUpperCase();
   res.json(myResponse);
-})
+});
 
  
  
@@ -44,7 +44,11 @@ app.get('/json', (req, res) => {
 
 
 /** 8) Chaining middleware. A Time server */
-
+app.get('/now', (req, res, next) => {
+  req.time = new Date().toString();
+}, (req, res, next) => {
+  req.send( { time: req.time } );
+});
 
 /** 9)  Get input from client - Route parameters */
 
