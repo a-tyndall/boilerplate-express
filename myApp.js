@@ -69,7 +69,7 @@ app.route('/name')
 // place it before all the routes !
 /** 12) Get data form POST  */
   .post((req, res, next) => {
-    console.log(req.body);
+    res.json({name: `${req.body.first} ${req.body.last}`});
   });
 
   
